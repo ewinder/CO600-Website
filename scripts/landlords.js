@@ -13,7 +13,7 @@ const setupUI = (user) => {
         loggedInLinks.forEach(item => item.style.display = 'none');
         loggedOutLinks.forEach(item => item.style.display = 'block');
     }
-}
+};
 
 // setup Customers
 const setupCust = (data) => {
