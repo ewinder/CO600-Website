@@ -51,32 +51,49 @@
 
   // The start method will wait until the DOM is loaded.
   ui.start('#firebaseui-auth-container', uiConfig);
-
 </script>
-<img src="logo.jpg" alt="Property Manager">
+
 </head>
 
-<body class="grey lighten-3">
+<body class="white lighten-3">
+
+<div class="center-align">
+  <img  src="property_manager_small.png" alt="Property Manager">
+</div>
 
   <!-- NAVBAR -->
-  <nav class="z-depth-0 grey lighten-4">
-    <div class="nav-wrapper container">
+  <nav class="nav extended z-depth-0 #448aff blue accent-2">
+    <div class="nav-wrapper">
+      <ul id="nav-mobile1" class="left hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="properties.html">Property List</a></li>
+        <li class="active"><a href="landlords.html">Landlords </a></li>
+        <li><a href="adverts.html">Adverts</a></li>
+      </ul>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li class="logged-in" style="display: none">
-          <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+          <a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
         </li>
         <li class="logged-in" style="display: none">
-          <a href="#" class="grey-text" id="logout">Logout</a>
+          <a href="#" class="white-text" id="logout">Logout</a>
         </li>
         <li class="logged-in" style="display: none">
-          <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Customer</a>
+          <a href="#" class="white-text modal-trigger" data-target="modal-create">Create Customer</a>
         </li>
         <li class="logged-out" style="display: none">
-          <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
-        </li>       
+          <a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
+        </li>
       </ul>
     </div>
-  </nav>  
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a class="active" href="index.html">Home</a></li>
+        <li class="tab"><a href="properties.html">Property List</a></li>
+        <li class="tab"><a href="landlords.html">Landlords </a></li>
+        <li class="tab"><a href="adverts.html">Adverts</a></li>
+      </ul>
+    </div>
+  </nav>
    
   <!-- LOGIN MODAL -->
   <div id="modal-login" class="modal">
@@ -134,15 +151,6 @@
 </div>
 
   <section>
-    <nav class="nav extended z-depth-0 #448aff blue accent-2">
-      <ul>
-        <li> <a href="index.html"> Home </a> </li>
-        <li> <a href="properties.html"> Property List </a></li>
-        <li> <a class="active" href="landlords.html">Landlords </a> </li>
-        <li> <a href="adverts.html">Adverts </a></li>
-      </ul>
-    </nav>
-  
     <article>
       <h2> Landlords</h2>  
     </article>
