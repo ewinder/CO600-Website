@@ -1,0 +1,84 @@
+body {
+	background-color: #F1F1F1;
+}
+
+#paper {
+	background-color:#FFFFFF;
+	width :700px;
+	height :4000px;
+	padding: 20px;
+	margin: auto;
+	
+		
+}
+#floor_Plan {
+	margin: auto;
+}
+#icon {
+	max-width: 500px;
+	width : 150px;
+	height : 100px; 
+	margin: auto;
+}
+
+#address {
+	float: right;
+	margin: auto;
+	
+}
+
+#descriptions{
+	max-width: 500px;
+	margin: auto;
+}
+
+#details {
+	width : 150px;
+	float:left;
+}
+#code {
+	width: 100px;
+	float : right;
+}
+
+hr {
+border: 1px solid #d8e2f3;
+}
+
+.left {
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+#leftSide {
+
+	width : 300px;
+
+}
+
+#rightSide {
+
+	width : 300px;
+}
+.unordered{
+	list-style-type : disc;
+	width : 150px;
+}
+#box {
+	height : 260px;
+}
+#print {
+	height : 25px;
+	width : 25px;
+	margin : auto;
+	
+}
+#Energy {
+}
+.EPC {
+	height : 50%;
+	width : 100%;
+}
