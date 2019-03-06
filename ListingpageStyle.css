@@ -1,4 +1,4 @@
-body {
+#model {
 	background-color: #F1F1F1;
 }
 
@@ -7,9 +7,21 @@ body {
 	width :700px;
 	height :4000px;
 	padding: 20px;
+	margin-bottom : 20px;
 	margin: auto;
 	
 		
+}
+
+button {
+	
+	
+	background-color: #448aff;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	
 }
 #floor_Plan {
 	margin: auto;
@@ -45,6 +57,10 @@ hr {
 border: 1px solid #d8e2f3;
 }
 
+.description {
+	margin: auto;
+}
+
 .left {
 	float:left;
 }
@@ -66,6 +82,11 @@ border: 1px solid #d8e2f3;
 .unordered{
 	list-style-type : disc;
 	width : 150px;
+}
+.btn_center {
+	
+    margin: 0 auto;
+    float: left;
 }
 #box {
 	height : 260px;
