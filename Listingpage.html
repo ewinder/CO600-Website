@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang = "eng">
 
 	<head>
@@ -7,69 +6,145 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<title>Properties List</title>
+		<title>Properties Manager</title>
 		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-		<link rel="stylesheet" type = "text/css" href= "ListingpageStyle.css">
-		
-		
-		<style>
-		body {font-family: Arial;}
+		<script>
+		// Initialize Firebase
+		var config = {
+		apiKey: "AIzaSyA9AX6FkB1qYNgClGmq6-CqQgZPCQnzYS4",
+		authDomain: "fir-auth-9bfa0.firebaseapp.com",
+		databaseURL: "https://fir-auth-9bfa0.firebaseio.com",
+		projectId: "fir-auth-9bfa0",
+		storageBucket: "fir-auth-9bfa0.appspot.com",
+		messagingSenderId: "718001529301"
+		};
+		firebase.initializeApp(config);
+        </script>
+		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+		<script type="text/javascript">
+            // FirebaseUI config.
+            var uiConfig = {
+                signInSuccessUrl: 'landlords.html',
+                signInOptions: [
+                    // Leave the lines as is for the providers you want to offer your users.
+                    firebase.auth.GoogleAuthProvider.PROVIDER_ID
 
-		.modal {
-		  display: none; /* Hidden by default */
-		  position: fixed; /* Stay in place */
-		  z-index: 1; /* Sit on top */
-		  padding-top: 100px; /* Location of the box */
-		  left: 0;
-		  top: 0;
-		  width: 100%; /* Full width */
-		  height: 100%; /* Full height */
-		  overflow: auto; /* Enable scroll if needed */
-		  background-color: rgb(0,0,0); /* Fallback color */
-		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-		}
+                ],
+                // tosUrl and privacyPolicyUrl accept either url string or a callback
+                // function.
+                // Terms of service url/callback.
+                //tosUrl: '<your-tos-url>',
+                // Privacy policy url/callback.
+                privacyPolicyUrl: function () {
+                    //window.location.assign('<your-privacy-policy-url>');
+                }
+            };
 
-		/* Modal Content */
-		.modal-content {
-		  background-color: #fefefe;
-		  margin: auto;
-		  padding: 20px;
-		}
+            // Initialize the FirebaseUI Widget using Firebase.
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-		/* The Close Button */
-		.close {
-		  color: #aaaaaa;
-		  float: right;
-		  font-size: 28px;
-		  font-weight: bold;
-		}
-
-		.close:hover,
-		.close:focus {
-		  color: #000;
-		  text-decoration: none;
-		  cursor: pointer;
-		}
-		
-		
-		</style>
+            // The start method will wait until the DOM is loaded.
+            ui.start('#firebaseui-auth-container', uiConfig);
+		</script>
 	</head>
 
 	<body class="white lighten-3">
-		<div class="containter" >
-				<!-- NAVBAR -->
-			<nav class="nav extended z-depth-0 #448aff blue accent-2">
-				  <ul>
-					<li> <a href="index.html"> Home </a> </li>
-					<li> <a class="active" href="landlords.html">Landlords </a> </li>
-					<li> <a href="listingpage.html">Adverts </a></li>
-				  </ul>
-			</nav>
-		
+	<div class="center-align">
+
+		<img  src="property_manager_small.png" alt="Property Manager">
+	</div>
+
+	<!-- NAVBAR -->
+	<nav class="nav extended z-depth-0 #448aff blue accent-2">
+		<div class="nav-wrapper">
+			<ul id="nav-mobile1" class="left hide-on-med-and-down">
+				<li><a href="index.html">Home</a></li>
+				<li class="active"><a href="landlords.html">Landlords </a></li>
+				<li><a href="listingpage.html">Adverts</a></li>
+			</ul>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li class="logged-in" style="display: none">
+					<a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
+				</li>
+				<li class="logged-in" style="display: none">
+					<a href="#" class="white-text" id="logout">Logout</a>
+				</li>
+				<li class="logged-in" style="display: none">
+					<a href="#" class="white-text modal-trigger" data-target="modal-create">Create Customer</a>
+				</li>
+				<li class="logged-out" style="display: none">
+					<a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
+				</li>
+			</ul>
+		</div>
+		<div class="nav-content">
+			<ul class="tabs tabs-transparent">
+				<li class="tab"><a class="active" href="index.html">Home</a></li>
+				<li class="tab"><a href="landlords.html">Landlords </a></li>
+				<li class="tab"><a href="listingpage.html">Adverts</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- LOGIN MODAL -->
+	<div id="modal-login" class="modal">
+		<div class="modal-content">
+			<h4>Login</h4><br />
+			<div id="firebaseui-auth-container"></div>
+		</div>
+	</div>
+
+	<!-- ACCOUNT MODAL -->
+	<div id="modal-account" class="modal">
+		<div class="modal-content center-align">
+			<h4>Account details</h4><br />
+			<div class="account-details"></div>
+			<div class="account-extras"></div>
+		</div>
+	</div>
+
+	<!-- CREATE CUSTOMER MODAL -->
+	<div id="modal-create" class="modal">
+		<div class="modal-content">
+			<h4>Create New Customer</h4><br />
+			<form id="create-form">
+				<div class="input-field">
+					<input type="text" id="name" required>
+					<label for="name">First name &amp; surname</label>
+				</div>
+				<div class="input-field">
+					<input type="tel" id="phone" required>
+					<label for="phone">Phone Number</label>
+				</div>
+				<div class="input-field">
+					<input type="email" id="email" required>
+					<label for="email">Email</label>
+				</div>
+				<div class="input-field">
+					<input type="text" id="houseNo" required>
+					<label for="houseNo">House No</label>
+				</div>
+				<div class="input-field">
+					<input type="text" id="street" required>
+					<label for="street">Street</label>
+				</div>
+				<div class="input-field">
+					<input type="text" id="town" required>
+					<label for="town">Town</label>
+				</div>
+				<div class="input-field">
+					<input type="text" id="postCode" required>
+					<label for="postCode">Post Code</label>
+				</div>
+				<button class="btn yellow darken-2 z-depth-0">Create</button>
+			</form>
+		</div>
+	</div>
 		
 		<!--<a class = "button" href = "" id = "a_property">-->
 			<div class="divider"></div>
