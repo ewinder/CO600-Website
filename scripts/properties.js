@@ -1,5 +1,5 @@
 // DOM elements
-const PropetyList = document.querySelector('.properties');
+const propertyList = document.querySelector('.properties');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 
@@ -22,7 +22,7 @@ const setupProp = (data) => {
         let html = '';
         data.forEach(doc => {
             const prop = doc.data();
-            //console.log(cust)
+            //console.log(prop)
 
             const li = `
       <li>
