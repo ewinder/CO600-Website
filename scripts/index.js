@@ -1,5 +1,6 @@
 // DOM elements
 const customerList = document.querySelector('.customers');
+const propertyList = document.querySelector('.properties');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 
@@ -23,6 +24,17 @@ const setupCust  =  (data)  => {
   } else {
     customerList.innerHTML = '<h5 class="center-align">Login to view Service Updates</h5>'
   }
+};
+
+
+//setup properties
+const setupProp  =  (data)  => {
+
+    if (data.length) {
+
+    } else {
+        propertyList.innerHTML = '<h5 class="center-align">Login to view Service Updates</h5>'
+    }
 };
 
 // setup materialize components

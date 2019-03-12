@@ -1,0 +1,126 @@
+<html lang = "eng">
+<!-- This css is temporary for me to get the layout right before moving it to materialize -->
+<style>
+.column {
+float: left;
+width: 50%;
+padding: 15px;
+}
+    h2 {
+        font-size: 12px;
+    }
+    p {
+        float: right;
+    }
+    ol{
+        list-style-type: square;
+        font-size: 30px;
+
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Properties Manager</title>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA9AX6FkB1qYNgClGmq6-CqQgZPCQnzYS4",
+            authDomain: "fir-auth-9bfa0.firebaseapp.com",
+            databaseURL: "https://fir-auth-9bfa0.firebaseio.com",
+            projectId: "fir-auth-9bfa0",
+            storageBucket: "fir-auth-9bfa0.appspot.com",
+            messagingSenderId: "718001529301"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script type="text/javascript">
+        // FirebaseUI config.
+        var uiConfig = {
+            signInSuccessUrl: 'landlords.html',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID
+
+            ],
+            // tosUrl and privacyPolicyUrl accept either url string or a callback
+            // function.
+            // Terms of service url/callback.
+            //tosUrl: '<your-tos-url>',
+            // Privacy policy url/callback.
+            privacyPolicyUrl: function () {
+                //window.location.assign('<your-privacy-policy-url>');
+            }
+        };
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+</head>
+
+
+<!-- all text is currently hardcoded to get the layout correct. This will be pulled from the DB when properties.html is working -->
+<body class="white lighten-3">
+
+
+<nav class="nav extended z-depth-0 #448aff blue accent-2">
+    <div class="nav-wrapper">32 Field Avenue, Canterbury
+    <p> Price: £995pcm</p></div>
+</nav>
+
+
+<div class="row">
+    <div class="column">
+       <ol>
+          <li>3 Bedrooms</li>
+          <li>2 Bathrooms</li>
+           <li> Parking Available</li>
+       </ol>
+    </div>
+
+
+    <div class="column">
+        <img src = "floor_plan.jpg">
+    </div>
+</div>
+
+<div class = "row">
+    <b>Full Description</b>
+    <br><br>
+    Situated within easy walk of the town centre, beach and railway station this beautifully presented Victorian terrace would make the ideal home. Featuring a modern fitted kitchen with integrated washing machine & dishwasher, large bathroom with both a double shower cubicle and bath, two good size double bedrooms, and lounge with separate dining room. To the rear is a pretty lawn garden with shed.
+    This house really is one not to be missed, so call now to arrange a viewing.
+</div>
+
+
+<div class = "row">
+    <img src = "floor_plan.jpg">
+    <img src = "floor_plan.jpg">
+</div>
+
+    <nav class="nav extended z-depth-0 #448aff blue accent-2">
+        <div class="nav-wrapper"> </div>
+    </nav>
+
+
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/advert.js"></script>
+</body>
+</html>
