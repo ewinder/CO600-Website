@@ -26,15 +26,16 @@ const setupProp = (data) => {
 
             const li = `
       <li>
-        <div class="collapsible-header grey lighten-4">${prop.address.houseNo}, ${prop.address.street}</div> 
+        <div class="collapsible-header grey lighten-4">${prop.address.houseNo}, ${prop.address.street} </div> 
         <div class="collapsible-body"><img class="responsive-img" src=${prop.mainPhotoUrl}></div>
         <div class="collapsible-body white">${prop.customer}</div>
         <div class="collapsible-body grey lighten-4">${prop.propertyType}</div>
         <div class="collapsible-body white"> ${prop.address.houseNo}
+     
         ${prop.address.street}<br>
         ${prop.address.town}<br>
         ${prop.address.postCode}</div>
-      
+      <div class="collapsible-body grey lighten-4"> <a href="advert.html" target="_blank" >View Advert</a></div>
       </li>
     `;
             html += li;
