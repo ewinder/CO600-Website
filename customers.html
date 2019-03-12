@@ -65,7 +65,7 @@
     <div class="nav-wrapper">
       <ul id="nav-mobile1" class="left hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
-        <li class="active"><a href="customers.html">Landlords </a></li>
+        <li class="active"><a href="customers.html">Customers</a></li>
         <li><a href="properties.html">Properties</a></li>
       </ul>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -75,9 +75,7 @@
         <li class="logged-in" style="display: none">
           <a href="#" class="white-text" id="logout">Logout</a>
         </li>
-        <li class="logged-in" style="display: none">
-          <a href="#" class="white-text modal-trigger" data-target="modal-create">Create Customer</a>
-        </li>
+
         <li class="logged-out" style="display: none">
           <a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
         </li>
@@ -103,48 +101,50 @@
     </div>
   </div>
 
-<!-- CREATE CUSTOMER MODAL -->
-<div id="modal-create" class="modal">
-  <div class="modal-content">
-    <h4>Create New Customer</h4><br />
-    <form id="create-form">
-      <div class="input-field">
-        <input type="text" id="name" required>
-        <label for="name">First name &amp; surname</label>
-      </div>
-      <div class="input-field">
-        <input type="tel" id="phone" required>
-        <label for="phone">Phone Number</label>
-      </div>
-      <div class="input-field">
-        <input type="email" id="email" required>
-        <label for="email">Email</label>
-      </div>
-      <div class="input-field">
-        <input type="text" id="houseNo" required>
-        <label for="houseNo">House No</label>
-      </div>
-      <div class="input-field">
-        <input type="text" id="street" required>
-        <label for="street">Street</label>
-      </div>
-      <div class="input-field">
-        <input type="text" id="town" required>
-        <label for="town">Town</label>
-      </div>
-      <div class="input-field">
-        <input type="text" id="postCode" required>
-        <label for="postCode">Post Code</label>
-      </div>
-      <button class="btn yellow darken-2 z-depth-0">Create</button>
-    </form>
-  </div>
-</div>
 
   <section>
     <article>
-      <h2>Landlords</h2>
-      <button type="button">Add New Landlord </button>
+      <h2>Customers</h2>
+      <!-- CREATE CUSTOMER MODAL -->
+        <button href="#" class="btn yellow darken-2 z-depth-0 modal-trigger" data-target="modal-create">Create New Customer</button>
+
+      <div id="modal-create" class="modal">
+        <div class="modal-content">
+            <h4>Create New Customer</h4><br/>
+
+          <form id="create-form">
+            <div class="input-field">
+              <input type="text" id="name" required>
+              <label for="name">First name &amp; surname</label>
+            </div>
+            <div class="input-field">
+              <input type="tel" id="phone" required>
+              <label for="phone">Phone Number</label>
+            </div>
+            <div class="input-field">
+              <input type="email" id="email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+              <input type="text" id="houseNo" required>
+              <label for="houseNo">House No</label>
+            </div>
+            <div class="input-field">
+              <input type="text" id="street" required>
+              <label for="street">Street</label>
+            </div>
+            <div class="input-field">
+              <input type="text" id="town" required>
+              <label for="town">Town</label>
+            </div>
+            <div class="input-field">
+              <input type="text" id="postCode" required>
+              <label for="postCode">Post Code</label>
+            </div>
+            <button class="btn yellow darken-2 z-depth-0">Create</button>
+          </form>
+        </div>
+      </div>
     </article>
   </section>
 

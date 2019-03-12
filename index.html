@@ -66,7 +66,7 @@
   <!-- NAVBAR -->
   <nav class="nav extended z-depth-0 #448aff blue accent 2">
     <div class="nav-wrapper">
-        <a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <a id="logo-container" href="index.html" class="brand-logo">Logo</a>
       <ul id="nav-mobile1" class="left hide-on-med-and-down">
         
       </ul>
@@ -76,9 +76,6 @@
         </li>
         <li class="logged-in" style="display: none">
           <a href="#" class="white-text" id="logout">Logout</a>
-        </li>
-        <li class="logged-in" style="display: none">
-          <a href="#" class="white-text modal-trigger" data-target="modal-create">Create Customer</a>
         </li>
         <li class="logged-out" style="display: none">
           <a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
@@ -105,43 +102,7 @@
     </div>
   </div>
 
-  <!-- CREATE CUSTOMER MODAL -->
-  <div id="modal-create" class="modal">
-    <div class="modal-content">
-      <h4>Create New Customer</h4><br />
-      <form id="create-form">
-        <div class="input-field">
-          <input type="text" id="name" required>
-          <label for="name">First name &amp; surname</label>
-        </div>
-        <div class="input-field">
-          <input type="tel" id="phone" required>
-          <label for="phone">Phone Number</label>
-        </div>
-        <div class="input-field">
-          <input type="email" id="email" required>
-          <label for="email">Email</label>
-        </div>
-        <div class="input-field">
-          <input type="text" id="houseNo" required>
-          <label for="houseNo">House No</label>
-        </div>
-        <div class="input-field">
-          <input type="text" id="street" required>
-          <label for="street">Street</label>
-        </div>
-        <div class="input-field">
-          <input type="text" id="town" required>
-          <label for="town">Town</label>
-        </div>
-        <div class="input-field">
-          <input type="text" id="postCode" required>
-          <label for="postCode">Post Code</label>
-        </div>
-        <button class="btn yellow darken-2 z-depth-0">Create</button>
-      </form>
-    </div>
-  </div>
+
  
 
 
@@ -154,7 +115,7 @@
         </div>
         <div class="row center">
           <a href="properties.html" id="download-button" class="btn-large waves-effect waves-light blue">View Properties</a>
-          <a href="customers.html" id="download-button" class="btn-large waves-effect waves-light blue">View Landlords</a>
+          <a href="customers.html" id="download-button" class="btn-large waves-effect waves-light blue">View Customers</a>
         </div>
         <br><br>
   
@@ -229,9 +190,7 @@
         </div>
       </div>
       <div class="footer-copyright">
-        <div class="container">
-        Made by Othman, Elly,Aaaron, Obaid <a class="orange-text text-lighten-3"></a>
-        </div>
+
       </div>
     </footer>
   

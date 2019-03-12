@@ -1,23 +1,5 @@
 <html lang = "eng">
-<!-- This css is temporary for me to get the layout right before moving it to materialize -->
-<style>
-.column {
-float: left;
-width: 50%;
-padding: 15px;
-}
-    h2 {
-        font-size: 12px;
-    }
-    p {
-        float: right;
-    }
-    ol{
-        list-style-type: square;
-        font-size: 30px;
 
-    }
-</style>
 
 <head>
     <meta charset="UTF-8">
@@ -73,44 +55,39 @@ padding: 15px;
 </head>
 
 
-<!-- all text is currently hardcoded to get the layout correct. This will be pulled from the DB when properties.html is working -->
+<!-- blue bar --->
 <body class="white lighten-3">
 
-
 <nav class="nav extended z-depth-0 #448aff blue accent-2">
-    <div class="nav-wrapper">32 Field Avenue, Canterbury
-    <p> Price: £995pcm</p></div>
+    <div class="nav-wrapper"><!-- Address --->
+    <p> <!-- price---></p></div>
 </nav>
 
-
-<div class="row">
-    <div class="column">
+<div class="mainrow">
+    <div class="descColumn">
        <ol>
-          <li>3 Bedrooms</li>
-          <li>2 Bathrooms</li>
-           <li> Parking Available</li>
+           <!-- the core items of the property. (amount of bedrooms, parking etc in bullet points --->
+
        </ol>
     </div>
 
-
-    <div class="column">
-        <img src = "floor_plan.jpg">
+    <div class="imageColumn">
+        <!-- main house image --->
     </div>
 </div>
 
-<div class = "row">
-    <b>Full Description</b>
+<div class = "descRow">
+    <b>Full Description:</b>
     <br><br>
-    Situated within easy walk of the town centre, beach and railway station this beautifully presented Victorian terrace would make the ideal home. Featuring a modern fitted kitchen with integrated washing machine & dishwasher, large bathroom with both a double shower cubicle and bath, two good size double bedrooms, and lounge with separate dining room. To the rear is a pretty lawn garden with shed.
-    This house really is one not to be missed, so call now to arrange a viewing.
+    <!-- full description --->
 </div>
 
 
-<div class = "row">
-    <img src = "floor_plan.jpg">
-    <img src = "floor_plan.jpg">
+<div class = "imagesRow">
+   <!-- house images --->
 </div>
 
+<!-- blue bar at bottom purely for decoration--->
     <nav class="nav extended z-depth-0 #448aff blue accent-2">
         <div class="nav-wrapper"> </div>
     </nav>
@@ -120,7 +97,6 @@ padding: 15px;
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="scripts/auth.js"></script>
-    <script src="scripts/advert.js"></script>
+
 </body>
 </html>
