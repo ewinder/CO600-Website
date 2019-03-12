@@ -102,19 +102,22 @@
     </div>
 </div>
 
-
-
 <section>
     <article>
         <h2>Properties</h2>
         <!-- CREATE PROPERTY MODAL -->
+        <li class="logged-in" style="display: none">
         <button href="#" class="btn yellow darken-2 z-depth-0 modal-trigger" data-target="modal-create">Create New Property</button>
-
+        </li>
         <div id="modal-create" class="modal">
             <div class="modal-content">
                 <h4>Create New Property</h4><br/>
 
                 <form id="create-form">
+                    <div class="input-field">
+                        <input type="text" id="customer" required>
+                        <label for="customer">Customer Name</label>
+                    </div>
                     <div class="input-field">
                         <input type="text" id="houseNo" required>
                         <label for="houseNo">House No</label>
@@ -130,10 +133,6 @@
                     <div class="input-field">
                         <input type="text" id="postCode" required>
                         <label for="postCode">Post Code</label>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" id="customer" required>
-                        <label for="customer">Customer</label>
                     </div>
                     <div class="input-field">
                         <input type="text" id="bedrooms" required>
