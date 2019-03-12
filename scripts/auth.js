@@ -4,13 +4,18 @@ auth.onAuthStateChanged(user => {
     //get data
     setupUI(user);
     db.collection('Customers').get().then(snapshot => {
-    setupCust(snapshot.docs);
-     
+      setupCust(snapshot.docs);
+
       //console.log(firebase.auth().currentUser.displayName);
     });
+    db.collection('Properties').get().then(snapshot => {
+      setupProp(snapshot.docs);
+    });
+
   } else {
     setupUI();
     setupCust([]);
+    setupProp([]);
   }
 });
 

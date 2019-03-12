@@ -1,5 +1,5 @@
 // DOM elements
-const propertyList = document.querySelector('.properties');
+const customerList = document.querySelector('.customers');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 
@@ -15,33 +15,31 @@ const setupUI = (user) => {
     }
 };
 
-// setup Properties
-const setupProp = (data) => {
+// setup Customers
+const setupCust = (data) => {
 
     if (data.length) {
         let html = '';
         data.forEach(doc => {
-            const prop = doc.data();
-            //console.log(prop)
+            const cust = doc.data();
+            //console.log(cust)
 
             const li = `
       <li>
-        <div class="collapsible-header grey lighten-4">${prop.address.houseNo}, ${prop.address.street}</div> 
-        <div class="collapsible-body"><img class="responsive-img" src=${prop.mainPhotoUrl}></div>
-        <div class="collapsible-body white">${prop.customer}</div>
-        <div class="collapsible-body grey lighten-4">${prop.propertyType}</div>
-        <div class="collapsible-body white"> ${prop.address.houseNo}
-        ${prop.address.street}<br>
-        ${prop.address.town}<br>
-        ${prop.address.postCode}</div>
-      
+        <div class="collapsible-header grey lighten-4"> Name - ${cust.name} </div>
+        <div class="collapsible-body white"> ${cust.address.houseNo}
+        ${cust.address.street}<br>
+        ${cust.address.town}<br>
+        ${cust.address.postCode}</div>
+        <div class="collapsible-body white"> ${cust.email} </div>
+        <div class="collapsible-body white"> ${cust.phoneNo} </div>
       </li>
     `;
             html += li;
         });
-        propertyList.innerHTML = html;
+        customerList.innerHTML = html;
     } else {
-        propertyList.innerHTML = '<h5 class="center-align">Login to view Property Details</h5>'
+        customerList.innerHTML = '<h5 class="center-align">Login to view Customer Details</h5>'
     }
 };
 
