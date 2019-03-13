@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-	<link rel = "icon" type = "image/png" href = "Logo.png" />
+    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="icon" type="image/png" href="Logo.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Property Manager</title>
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
@@ -26,7 +26,7 @@
     </script>
 
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"/>
     <script type="text/javascript">
         // FirebaseUI config.
         var uiConfig = {
@@ -57,66 +57,67 @@
 
 <body class="white lighten-3">
 
-    <div class="center-align">
-        <img id="logo" src="property_manager_small.png" alt="Property Manager">
+<div class="center-align">
+    <img id="logo" src="property_manager_small.png" alt="Property Manager">
+</div>
+
+<!-- NAVBAR -->
+<nav class="nav extended z-depth-0 #448aff blue accent-2">
+    <div class="nav-wrapper">
+        <ul id="nav-mobile1" class="left hide-on-med-and-down">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="customers.html">Customers </a></li>
+            <li class="active"><a href="properties.html">Properties</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="logged-in" style="display: none">
+                <a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
+            </li>
+            <li class="logged-in" style="display: none">
+                <a href="#" class="white-text" id="logout">Logout</a>
+            </li>
+
+            <li class="logged-out" style="display: none">
+                <a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
+            </li>
+        </ul>
     </div>
 
-    <!-- NAVBAR -->
-    <nav class="nav extended z-depth-0 #448aff blue accent-2">
-        <div class="nav-wrapper">
-            <ul id="nav-mobile1" class="left hide-on-med-and-down">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="customers.html">Customers </a></li>
-                <li class="active"><a href="properties.html">Properties</a></li>
-            </ul>
+</nav>
 
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li class="logged-in" style="display: none">
-                    <a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
-                </li>
-                <li class="logged-in" style="display: none">
-                    <a href="#" class="white-text" id="logout">Logout</a>
-                </li>
-
-                <li class="logged-out" style="display: none">
-                    <a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
-                </li>
-            </ul>
-        </div>
-
-    </nav>
-
-    <!-- LOGIN MODAL -->
-    <div id="modal-login" class="modal">
-        <div class="modal-content">
-            <h4>Login</h4><br />
-            <div id="firebaseui-auth-container"></div>
-        </div>
+<!-- LOGIN MODAL -->
+<div id="modal-login" class="modal">
+    <div class="modal-content">
+        <h4>Login</h4><br/>
+        <div id="firebaseui-auth-container"></div>
     </div>
+</div>
 
-    <!-- ACCOUNT MODAL -->
-    <div id="modal-account" class="modal">
-        <div class="modal-content center-align">
-            <h4>Account details</h4><br />
-            <div class="account-details"></div>
-            <div class="account-extras"></div>
-        </div>
+<!-- ACCOUNT MODAL -->
+<div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+        <h4>Account details</h4><br/>
+        <div class="account-details"></div>
+        <div class="account-extras"></div>
     </div>
+</div>
 
 <section>
     <article>
-        <h2>Properties</h2>
+        <h2 id="propertiesHead">Properties</h2>
         <!-- CREATE PROPERTY MODAL -->
         <li class="logged-in" style="display: none">
-        <button href="#" class="btn yellow darken-2 z-depth-0 modal-trigger" data-target="modal-create">Create New Property</button>
+            <button href="#" class="btn #448aff blue accent-2 waves-effect waves-light modal-trigger"
+                    data-target="modal-create">Create New Property
+            </button>
         </li>
         <div id="modal-create" class="modal">
             <div class="modal-content">
                 <h4>Create New Property</h4><br/>
 
                 <form id="create-form-prop">
-                    <div class="input-field col s12">
-
+                    <div class="input-field">
                         <select class="custName" id="custId">
                         </select>
                         <label>Select Customer</label>
@@ -175,34 +176,24 @@
         </div>
     </article>
 </section>
+
 <!-- PROPERTY LIST -->
-
-
-<div class="container" style="margin-top: 40px;">
-
-</div>
-
 <div class="container" style="margin-top: 40px;">
     <ul class="collapsible z-depth-0 properties" style="border: none;">
     </ul>
 </div>
 
 <script>
-
     // make auth and firestore references
     const db = firebase.firestore();
     const auth = firebase.auth();
-
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="scripts/properties.js"></script>
-<!--<script src="scripts/auth.js"></script>-->
-
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script>$(document).ready(function(){
-    $('select').formSelect();
-});</script>
+<!--<script>$(document).ready(function(){-->
+<!--$('select').formSelect();-->
+<!--});</script>-->
 </body>
 
 </html>
