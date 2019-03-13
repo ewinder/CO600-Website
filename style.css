@@ -140,3 +140,11 @@ footer.page-footer {
 #logo{
   height: 100px;
 }
+
+#propertiesHead{
+  text-align: justify;
+}
+
+#customersHead{
+  text-align: justify;
+}
