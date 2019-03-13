@@ -1,18 +1,20 @@
-<html lang = "eng">
+<html lang="eng">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<title>Properties Manager</title>
-		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-		<script>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+	<link rel = "icon" type = "image/png" href = "Logo.png" />
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<title>Properties Manager</title>
+	<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<script>
 		// Initialize Firebase
 		var config = {
 		apiKey: "AIzaSyA9AX6FkB1qYNgClGmq6-CqQgZPCQnzYS4",
@@ -24,399 +26,520 @@
 		};
 		firebase.initializeApp(config);
         </script>
-		<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-		<script type="text/javascript">
-            // FirebaseUI config.
-            var uiConfig = {
-                signInSuccessUrl: 'landlords.html',
-                signInOptions: [
-                    // Leave the lines as is for the providers you want to offer your users.
-                    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+	<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+	<script type="text/javascript">
+		// FirebaseUI config.
+		var uiConfig = {
+			signInSuccessUrl: 'landlords.html',
+			signInOptions: [
+				// Leave the lines as is for the providers you want to offer your users.
+				firebase.auth.GoogleAuthProvider.PROVIDER_ID
 
-                ],
-                // tosUrl and privacyPolicyUrl accept either url string or a callback
-                // function.
-                // Terms of service url/callback.
-                //tosUrl: '<your-tos-url>',
-                // Privacy policy url/callback.
-                privacyPolicyUrl: function () {
-                    //window.location.assign('<your-privacy-policy-url>');
-                }
-            };
+			],
+			// tosUrl and privacyPolicyUrl accept either url string or a callback
+			// function.
+			// Terms of service url/callback.
+			//tosUrl: '<your-tos-url>',
+			// Privacy policy url/callback.
+			privacyPolicyUrl: function () {
+				//window.location.assign('<your-privacy-policy-url>');
+			}
+		};
 
-            // Initialize the FirebaseUI Widget using Firebase.
-            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+		// Initialize the FirebaseUI Widget using Firebase.
+		var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-            // The start method will wait until the DOM is loaded.
-            ui.start('#firebaseui-auth-container', uiConfig);
-		</script>
-	</head>
+		// The start method will wait until the DOM is loaded.
+		ui.start('#firebaseui-auth-container', uiConfig);
+	</script>
+</head>
 
-	<body class="white lighten-3">
-	<div class="center-align">
-
-		<img  src="property_manager_small.png" alt="Property Manager">
-	</div>
-
-	<!-- NAVBAR -->
-	<nav class="nav extended z-depth-0 #448aff blue accent-2">
-		<div class="nav-wrapper">
-			<ul id="nav-mobile1" class="left hide-on-med-and-down">
-				<li><a href="index.html">Home</a></li>
-				<li class="active"><a href="customers.html">Landlords </a></li>
-				<li><a href="listingpage.html">Adverts</a></li>
-			</ul>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li class="logged-in" style="display: none">
-					<a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
-				</li>
-				<li class="logged-in" style="display: none">
-					<a href="#" class="white-text" id="logout">Logout</a>
-				</li>
-				<li class="logged-in" style="display: none">
-					<a href="#" class="white-text modal-trigger" data-target="modal-create">Create Customer</a>
-				</li>
-				<li class="logged-out" style="display: none">
-					<a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
-				</li>
-			</ul>
+<body class="white lighten-3">
+	< <div class="center-align">
+		<img id="logo" src="property_manager_small.png" alt="Property Manager">
 		</div>
-		
-	</nav>
 
-	<!-- LOGIN MODAL -->
-	<div id="modal-login" class="modal">
-		<div class="modal-content">
-			<h4>Login</h4><br />
-			<div id="firebaseui-auth-container"></div>
-		</div>
-	</div>
+		<!-- NAVBAR -->
+		<nav class="nav extended z-depth-0 #448aff blue accent-2">
+			<div class="nav-wrapper">
+				<ul id="nav-mobile1" class="left hide-on-med-and-down">
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="customers.html">Landlords </a></li>
+					<li><a href="listingpage.html">Adverts</a></li>
+				</ul>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li class="logged-in" style="display: none">
+						<a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
+					</li>
+					<li class="logged-in" style="display: none">
+						<a href="#" class="white-text" id="logout">Logout</a>
+					</li>
+					<li class="logged-in" style="display: none">
+						<a href="#" class="white-text modal-trigger" data-target="modal-create">Create Customer</a>
+					</li>
+					<li class="logged-out" style="display: none">
+						<a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
+					</li>
+				</ul>
+			</div>
 
-	<!-- ACCOUNT MODAL -->
-	<div id="modal-account" class="modal">
-		<div class="modal-content center-align">
-			<h4>Account details</h4><br />
-			<div class="account-details"></div>
-			<div class="account-extras"></div>
-		</div>
-	</div>
+		</nav>
 
-	<!-- CREATE CUSTOMER MODAL -->
-	<div id="modal-create" class="modal">
-		<div class="modal-content">
-			<h4>Create New Customer</h4><br />
-			<form id="create-form">
-				<div class="input-field">
-					<input type="text" id="name" required>
-					<label for="name">First name &amp; surname</label>
-				</div>
-				<div class="input-field">
-					<input type="tel" id="phone" required>
-					<label for="phone">Phone Number</label>
-				</div>
-				<div class="input-field">
-					<input type="email" id="email" required>
-					<label for="email">Email</label>
-				</div>
-				<div class="input-field">
-					<input type="text" id="houseNo" required>
-					<label for="houseNo">House No</label>
-				</div>
-				<div class="input-field">
-					<input type="text" id="street" required>
-					<label for="street">Street</label>
-				</div>
-				<div class="input-field">
-					<input type="text" id="town" required>
-					<label for="town">Town</label>
-				</div>
-				<div class="input-field">
-					<input type="text" id="postCode" required>
-					<label for="postCode">Post Code</label>
-				</div>
-				<button class="btn yellow darken-2 z-depth-0">Create</button>
-			</form>
+		<!-- LOGIN MODAL -->
+		<div id="modal-login" class="modal">
+			<div class="modal-content">
+				<h4>Login</h4><br />
+				<div id="firebaseui-auth-container"></div>
+			</div>
 		</div>
-	</div>
-		
+
+		<!-- ACCOUNT MODAL -->
+		<div id="modal-account" class="modal">
+			<div class="modal-content center-align">
+				<h4>Account details</h4><br />
+				<div class="account-details"></div>
+				<div class="account-extras"></div>
+			</div>
+		</div>
+
+		<!-- CREATE CUSTOMER MODAL -->
+		<div id="modal-create" class="modal">
+			<div class="modal-content">
+				<h4>Create New Customer</h4><br />
+				<form id="create-form">
+					<div class="input-field">
+						<input type="text" id="name" required>
+						<label for="name">First name &amp; surname</label>
+					</div>
+					<div class="input-field">
+						<input type="tel" id="phone" required>
+						<label for="phone">Phone Number</label>
+					</div>
+					<div class="input-field">
+						<input type="email" id="email" required>
+						<label for="email">Email</label>
+					</div>
+					<div class="input-field">
+						<input type="text" id="houseNo" required>
+						<label for="houseNo">House No</label>
+					</div>
+					<div class="input-field">
+						<input type="text" id="street" required>
+						<label for="street">Street</label>
+					</div>
+					<div class="input-field">
+						<input type="text" id="town" required>
+						<label for="town">Town</label>
+					</div>
+					<div class="input-field">
+						<input type="text" id="postCode" required>
+						<label for="postCode">Post Code</label>
+					</div>
+					<button class="btn yellow darken-2 z-depth-0">Create</button>
+				</form>
+			</div>
+		</div>
+
 		<!--<a class = "button" href = "" id = "a_property">-->
-			<div class="divider"></div>
-			<div class="section" class = "description" >
-				
-				<div class="row">
+		<div class="divider"></div>
+		<div class="section" class="description">
 
-					  <div class="col s3">
-						
-						<div class = "btn_center" ><button id="HouseName">House Name</button></div>
-					  </div>
+			<div class="row">
 
-					  <div class="col s9">
-					  <h3>Property Descriptions</h3>
-						Unique Oast House-designed Home<br />
-						Approximately One Acre Plot<br />
-						Four/Five
-											Double Bedrooms<br />
-											Minstrels' Gallery &nbsp
-					  </div>
+				<div class="col s3">
+
+					<div class="btn_center"><button id="HouseName">House Name</button></div>
+				</div>
+
+				<div class="col s9">
+					<h3>Property Descriptions</h3>
+					Unique Oast House-designed Home<br />
+					Approximately One Acre Plot<br />
+					Four/Five
+					Double Bedrooms<br />
+					Minstrels' Gallery &nbsp
+				</div>
 
 			</div>
-				<p><div class="Description2">
-						</div></p>
-			</div>
+			<p>
+				<div class="Description2">
+				</div>
+			</p>
+		</div>
 		<hr>
 		</div>
+		
 		<!-- w3 SCHOOLS-->
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
 
-			  <!-- Modal content -->
+			<!-- Modal content -->
 			<div class="modal-content">
 				<span class="close">&times;</span>
-				<div id = "model">
-				
-				
-			
-				<div id = "paper">
-			<header>
-			
-				<img src = "property_manager_small.png" id = "icon"/>
-				
-				<div id = "address">
-					Property Manager: 
-					<br>Address: ??????
-					<br>Phone Number:??
-					<br>Website link:??
-					<br>Email Address:?
-				</div>
-			
-			</header>
-			
-			<br><hr><br>
-			
-			<div id = "box">
-				<div class = "left" id= "leftSide">
-					<div>
-					
-						<div id="mainImage" >
-							<img class="responsive-img" src="floor_plan.jpg" width="200" height="40" alt="Floor Plan">
-						</div>
-					
-					</div>
-						
-						<div id="mainImage">
-							<img class="responsive-img" src="property_manager_small.png" width="200" height="40" alt="Floor Plan">
-						</div>
-					
-					<div>
-					
-					</div>
-				</div>
-				<div class="right" id= "rightSide">
-					<div id = "details">
-						<div>
-						
-							<div id="descrbe"><h6>Minstrels Oast, Ford Walk, Yorkletts, Whitstable</h6></div>
-						
-						</div>
-							
-						<div>
-							<div>
-							<h6>For sale</h6>
-							<h5>£1,075,000</h5>
-							<ul "class = "unordered">
-								<li> Detached House</li>
-								<li> Freehold</li>
-								<li> 4 bedrooms</li>
-								<li> 2 bathrooms</li>
-								<li> 2 reception rooms</li>
-							</ul>
+				<div id="model">
+
+
+
+					<div id="paper">
+						<header>
+
+							<img src="property_manager_small.png" id="icon" />
+
+							<div id="address">
+								Property Manager:
+								<br>Address: ??????
+								<br>Phone Number:??
+								<br>Website link:??
+								<br>Email Address:?
 							</div>
-							
+
+						</header>
+
+						<br>
+						<hr><br>
+
+						<div id="box">
+							<div class="left" id="leftSide">
+								<div>
+
+									<div id="mainImage">
+										<img class="responsive-img" src="floor_plan.jpg" width="200" height="40" alt="Floor Plan">
+									</div>
+
+								</div>
+
+								<div id="mainImage">
+									<img class="responsive-img" src="property_manager_small.png" width="200" height="40" alt="Floor Plan">
+								</div>
+
+								<div>
+
+								</div>
+							</div>
+							<div class="right" id="rightSide">
+								<div id="details">
+									<div>
+
+										<div id="descrbe">
+											<h6>Minstrels Oast, Ford Walk, Yorkletts, Whitstable</h6>
+										</div>
+
+									</div>
+
+									<div>
+										<div>
+											<h6>For sale</h6>
+											<h5>£1,075,000</h5>
+											<ul "class = " unordered">
+												<li> Detached House</li>
+												<li> Freehold</li>
+												<li> 4 bedrooms</li>
+												<li> 2 bathrooms</li>
+												<li> 2 reception rooms</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<div id="code">
+									<div>
+
+										<div id="descrbe">
+											<p>Property: 4631656</p>
+										</div>
+
+
+									</div>
+								</div>
+
+							</div>
 						</div>
-					</div>
-					<div id = "code">
+						<br>
+						<hr><br>
 						<div>
-						
-							<div id="descrbe"><p>Property: 4631656</p></div>
-						
-							
+
+							<div>
+								<h5>Property Descriptions</h5>
+							</div>
+
+							<div>
+								<div>
+									<ul class="unordered">
+										<li>Unique Oast House-designed Home </li>
+										<li>Approximately One Acre Plot</li>
+									</ul>
+								</div>
+								<div>
+									<ul>
+										<li>Four/Five Double Bedrooms </li>
+										<li>Minstrels' Gallery</li>
+									</ul>
+								</div>
+
+								<p>Occupying a substantial plot of approximately one acre with sweeping views across the Kent countryside and
+									The Swale, this purpose-built Oast House-designed home with numerous outbuildings offers versatile living
+									accommodation in a truly unique property. The larger, principal section of the home boasts a Minstrels'
+									Gallery, overlooking a capacious double-height sitting room, dining room and kitchen, with a stylised vaulted
+									ceiling. Three of the four double bedrooms currently on offer are to be found on the mezzanine floor,
+									alongside a "Jack & Jill" en suite, with the main family bathroom located on the ground floor. The layout of
+									the roundal/ "Kiln" area currently comprises an office to the ground floor and fourth double bedroom to the
+									first floor. The possibilities for this property, both inside and out, are countless, including the addition
+									of several bedrooms upstairs. This home really is a must-see! </p>
+
+							</div>
+
+						</div>
+						<div>
+
+							<div>
+								<h5>Ground Floor</h5>
+							</div>
+
+							<div>
+								<h6>Sitting Room/Dining Room </h6>
+							</div>
+							<div>
+								<p>28' 8" x 22' 10" (8.74m x 6.96m) Entrance door and two double glazed timber frame windows to front, two sets
+									of double glazed french doors to side leading onto conservatory, four radiators, staircase to first floor,
+									understairs storage cupboard, fitted understairs furniture and shelving, large corner log burner with brick
+									and slate hearth, TV point, telephone point, archway leading through to...</p>
+							</div>
+
+							<div>
+								<h6>Kitchen</h6>
+							</div>
+							<div>
+								<p>10' 11" x 10' 8" (3.33m x 3.25m) Timber frame double glazed windows to rear and side, recessed halogen down
+									lighting, fitted kitchen comprising range of wooden wall and base units with complementary work surfaces over
+									and matching upstands above, inset ceramic one and half bowl sink and and drainer unit with mixer tap over,
+									tiled flooring, free standing "Rangemaster" cooker with fan-assisted electric oven compartments, five burner
+									gas hob over, warming plate, extractor canopy hood above, free standing American style double width "LG"
+									fridge freezer, free standing "Bosch" dishwasher. </p>
+							</div>
+
+							<div>
+								<h6>Utility Room</h6>
+							</div>
+							<div>
+								<p>10' 9" x 8' 1" (3.28m x 2.46m) Timber frame stable door to side, timber frame double glazed window to side,
+									fitted work surfaces with inset ceramic butler sink and taps over, free standing washing machine, tumble dryer
+									and full height freezer unit, integrated storage cupboards, tiled flooring.</p>
+							</div>
+
+							<div>
+								<h6>Bathroom</h6>
+							</div>
+
+							<div>
+								<p>8' 4" x 7' 5" (2.54m x 2.26m) Frosted double glazed timber frame window to side, modern fitted bathroom
+									suite comprising panelled bath unit with mixer tap over and hand held shower attachment to side, pedestal wash
+									hand basin with taps over, low level WC, radiator, part tiled walls, fully tiled flooring, wall mounted
+									extractor fan.</p>
+							</div>
+
+
+							<div>
+								<h6>Sun Room </h6>
+							</div>
+							<div>
+								<p>26' 1" x 9' 6" (7.95m x 2.90m) Panoramic Sea Views, half height brick wall, double glazed UPVC windows to
+									three sides, double glazed UPVC wood effect french doors to rear leading onto rear garden, radiator, carpeted
+									flooring.</p>
+							</div>
+						</div>
+						<div>
+
+							<div>
+								<h5>First Floor</h5>
+
+								<div>
+									<h6>Mezzanine Bedroom</h6>
+								</div>
+								<div>
+									<p>22' 10" x 9' 9" (6.96m x 2.97m) Sea Views, double glazed timber frame balcony doors leading onto balcony
+										overlooking the garden, large minstrels' gallery overlooking open plan living area with ornate vaulted
+										ceiling.</p>
+								</div>
+
+								<div>
+									<h6>Bedroom Two</h6>
+								</div>
+
+								<div>
+									<p>13' 6" x 11' 3" (4.11m x 3.43m) Timber frame double glazed window to side, recessed halogen down lighting.</p>
+								</div>
+
+								<div>
+									<h6>Bedroom Three</h6>
+								</div>
+								<div>
+									<p>11' 10" x 5' (3.61m x 1.52m) Double glazed timber frame window to side, extensive fitted wardrobes,
+										radiator, door leading onto...</p>
+								</div>
+
+								<div>
+									<h6>Jack & Jill En Suite Shower Room</h6>
+								</div>
+								<div>
+									<p>7' 6" x 5' 2" (2.29m x 1.57m) Modern fitted shower room comprising double width walk-in shower cubicle with
+										wall mounted electric shower unit over and shower screens to sides, pedestal wash hand basin with mixer tap
+										over, low level WC, wall mounted extractor fan, wall mounted heated towel rail, recessed halogen down
+										lighting, fully tiled walls and flooring. </p>
+								</div>
+
+							</div>
+							<div>
+
+								<div>
+									<h5>Kiln - Ground Floor</h5>
+								</div>
+
+								<div>
+									<h6>Office</h6>
+								</div>
+
+								<div>
+									<p>Roundal 15'4 x 15'4Double glazed timber frame doors and windows to rear, telephone point, understairs
+										storage cupboard, radiator, staircase to first floor.</p>
+								</div>
+
+							</div>
+							<div>
+
+								<div>
+									<h5>Kiln - First Floor</h5>
+								</div>
+
+								<div>
+									<h6>Bedroom Four </h6>
+								</div>
+
+								<div>
+									<p>Roundal 15'7 x 15'7Sea Views, two double glazed velux style windows to rear, radiator, loft hatch providing
+										acess to loft space beyond.</p>
+								</div>
+
+							</div>
+							<div>
+
+								<div>
+									<h5>Exterior</h5>
+								</div>
+
+								<div>
+									<h6>Gardens </h6>
+								</div>
+								<div>
+									<p>Approximately one acre of land, sectioned into various garden areas, mainly laid to lawn, established
+										trees, mature shrubs and flowering plants throughout, fish pond and large natural pond, free standing green
+										houses, static home, timber frame arbor with bbq area, picnic bench and seating, freestanding prefabricated
+										single garage, large driveway laid to shingle providing off street parking for numerous vehicles, paved patio
+										hard standing area suitable for caravan or motorhome, fenced surround, large timber gate to front and
+										additional gated access points, outside lighting, outside tap. </p>
+								</div>
+
+								<div>
+									<h6>Double Garage </h6>
+								</div>
+								<div>
+									<p>Free standing double garage with two up and over doors to front, serviced by power and light.</p>
+								</div>
+
+								<div>
+									<h6>Workshop/Barn </h6>
+								</div>
+								<div>
+									<p>Approx. 42' x 21' (12.80m x 6.40m) Double glazed UPVC windows to front, rear and side, double width roller
+										door to front and roller door to rear, two post car lift. Serviced by power and light.</p>
+								</div>
+
+							</div>
+							<div>
+
+								<div>
+									<h6>Floor Plans</h6>
+								</div>
+
+								<div><img src="floor_plan.jpg" id="floor_Plan"></div>
+
+							</div>
+							<div>
+
+								<div id="Energy">
+									<h5>Energy Performance Certificate</h5>
+								</div>
+
+								<div>
+
+									<div><img class="EPC" src="energy.png" /></div>
+								</div>
+								<div>
+									<center>
+										<div><img id="print" src="print.png" /></div>
+									</center>
+								</div>
+
+							</div>
+
+							<hr>
+							<div>
+
+								<div>
+									<h6> Misrepresentation Act 1967</h6>
+								</div>
+								<div>
+									<p>These particulars are believed to be correct but their accuracy is not guaranteed nor do they form part of
+										any contract.</p>
+								</div>
+								<div><img src="property_manager_small.png" width="100px" height="70px" style="margin-bottom : 50px" /> </div>
+
+							</div>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
-			<br><hr><br>
-			<div>
-			
-				<div><h5>Property Descriptions</h5></div>
-					
-				<div>
-					<div>
-						<ul class = "unordered">
-							<li>Unique Oast House-designed Home </li>
-							<li>Approximately One Acre Plot</li>
-						</ul>
-					</div>
-					<div>
-						<ul>
-							<li>Four/Five Double Bedrooms </li>
-							<li>Minstrels' Gallery</li>
-						</ul>
-					</div>
-					
-					<p>Occupying a substantial plot of approximately one acre with sweeping views across the Kent countryside and The Swale, this purpose-built Oast House-designed home with numerous outbuildings offers versatile living accommodation in a truly unique property. The larger, principal section of the home boasts a Minstrels' Gallery, overlooking a capacious double-height sitting room, dining room and kitchen, with a stylised vaulted ceiling. Three of the four double bedrooms currently on offer are to be found on the mezzanine floor, alongside a "Jack & Jill" en suite, with the main family bathroom located on the ground floor. The layout of the roundal/ "Kiln" area currently comprises an office to the ground floor and fourth double bedroom to the first floor. The possibilities for this property, both inside and out, are countless, including the addition of several bedrooms upstairs. This home really is a must-see!  </p>
-					
-				</div>
-			
-			</div>
-			<div>
-			
-				<div><h5>Ground Floor</h5></div>
-				
-				<div><h6>Sitting Room/Dining Room </h6></div>
-				<div><p>28' 8" x 22' 10" (8.74m x 6.96m) Entrance door and two double glazed timber frame windows to front, two sets of double glazed french doors to side leading onto conservatory, four radiators, staircase to first floor, understairs storage cupboard, fitted understairs furniture and shelving, large corner log burner with brick and slate hearth, TV point, telephone point, archway leading through to...</p></div>
-				
-				<div><h6>Kitchen</h6></div>
-				<div><p>10' 11" x 10' 8" (3.33m x 3.25m) Timber frame double glazed windows to rear and side, recessed halogen down lighting, fitted kitchen comprising range of wooden wall and base units with complementary work surfaces over and matching upstands above, inset ceramic one and half bowl sink and and drainer unit with mixer tap over, tiled flooring, free standing "Rangemaster" cooker with fan-assisted electric oven compartments, five burner gas hob over, warming plate, extractor canopy hood above, free standing American style double width "LG" fridge freezer, free standing "Bosch" dishwasher.  </p></div>
-				
-				<div><h6>Utility Room</h6></div>
-				<div><p>10' 9" x 8' 1" (3.28m x 2.46m) Timber frame stable door to side, timber frame double glazed window to side, fitted work surfaces with inset ceramic butler sink and taps over, free standing washing machine, tumble dryer and full height freezer unit, integrated storage cupboards, tiled flooring.</p></div>
-				
-				<div><h6>Bathroom</h6></div>
-				
-				<div><p>8' 4" x 7' 5" (2.54m x 2.26m) Frosted double glazed timber frame window to side, modern fitted bathroom suite comprising panelled bath unit with mixer tap over and hand held shower attachment to side, pedestal wash hand basin with taps over, low level WC, radiator, part tiled walls, fully tiled flooring, wall mounted extractor fan.</p></div>
-				
-				
-				<div><h6>Sun Room </h6></div>
-				<div><p>26' 1" x 9' 6" (7.95m x 2.90m) Panoramic Sea Views, half height brick wall, double glazed UPVC windows to three sides, double glazed UPVC wood effect french doors to rear leading onto rear garden, radiator, carpeted flooring.</p></div> 
-			</div>
-			<div>
-			
-				<div><h5>First Floor</h5> 
-				
-				<div><h6>Mezzanine Bedroom</h6></div>
-				<div><p>22' 10" x 9' 9" (6.96m x 2.97m) Sea Views, double glazed timber frame balcony doors leading onto balcony overlooking the garden, large minstrels' gallery overlooking open plan living area with ornate vaulted ceiling.</p></div> 
-				
-				<div><h6>Bedroom Two</h6></div>
-				
-				<div><p>13' 6" x 11' 3" (4.11m x 3.43m) Timber frame double glazed window to side, recessed halogen down lighting.</p></div>
-				
-				<div><h6>Bedroom Three</h6></div>
-				<div><p>11' 10" x 5' (3.61m x 1.52m) Double glazed timber frame window to side, extensive fitted wardrobes, radiator, door leading onto...</p></div>
-				
-				<div><h6>Jack & Jill En Suite Shower Room</h6></div>
-				<div><p>7' 6" x 5' 2" (2.29m x 1.57m) Modern fitted shower room comprising double width walk-in shower cubicle with wall mounted electric shower unit over and shower screens to sides, pedestal wash hand basin with mixer tap over, low level WC, wall mounted extractor fan, wall mounted heated towel rail, recessed halogen down lighting, fully tiled walls and flooring.  </p></div>
-			
-			</div>
-			<div>
-			
-				<div><h5>Kiln - Ground Floor</h5></div>
-				
-				<div><h6>Office</h6></div>
-				
-				<div><p>Roundal 15'4 x 15'4Double glazed timber frame doors and windows to rear, telephone point, understairs storage cupboard, radiator, staircase to first floor.</p></div>
-			
-			</div>
-			<div>
-			
-				<div><h5>Kiln - First Floor</h5></div>
-				
-				<div><h6>Bedroom Four </h6></div>
-				
-				<div><p>Roundal 15'7 x 15'7Sea Views, two double glazed velux style windows to rear, radiator, loft hatch providing acess to loft space beyond.</p></div>
-			
-			</div>
-			<div>
-			
-				<div><h5>Exterior</h5></div>
-				
-				<div><h6>Gardens </h6></div>
-				<div><p>Approximately one acre of land, sectioned into various garden areas, mainly laid to lawn, established trees, mature shrubs and flowering plants throughout, fish pond and large natural pond, free standing green houses, static home, timber frame arbor with bbq area, picnic bench and seating, freestanding prefabricated single garage, large driveway laid to shingle providing off street parking for numerous vehicles, paved patio hard standing area suitable for caravan or motorhome, fenced surround, large timber gate to front and additional gated access points, outside lighting, outside tap.  </p></div>
-				
-				<div><h6>Double Garage  </h6></div>
-				<div><p>Free standing double garage with two up and over doors to front, serviced by power and light.</p></div>
-				
-				<div><h6>Workshop/Barn </h6></div>
-				<div><p>Approx. 42' x 21' (12.80m x 6.40m) Double glazed UPVC windows to front, rear and side, double width roller door to front and roller door to rear, two post car lift. Serviced by power and light.</p></div>  
-			
-			</div>
-			<div>
-			
-				<div><h6>Floor Plans</h6></div>
-				
-				<div><img src = "floor_plan.jpg" id = "floor_Plan"></div>
-			
-			</div>
-			<div>
-			
-				<div id = "Energy"><h5>Energy Performance Certificate</h5></div>
-				
-				<div>
-				
-					<div><img class ="EPC" src = "energy.png" /></div>
-				</div>
-					<div>
-						<center><div><img id = "print" src = "print.png"/></div></center>
-					</div>
-					
-			</div>
-			
-			<hr>
-			<div>
-			
-				<div><h6> Misrepresentation Act 1967</h6></div>
-				<div><p>These particulars are believed to be correct but their accuracy is not guaranteed nor do they form part of any contract.</p> </div>
-				<div><img src = "property_manager_small.png" width = "100px" height = "70px" style = "margin-bottom : 50px"/> </div>
-			
-			</div>
-		</div>
-			</div>
 
-			</div>
-			</div>
-			
-			<!-- W3 Schools--> 
-		<script>
-		
-			var modal = document.getElementById('myModal');
+			<!-- W3 Schools-->
+			<script>
+				var modal = document.getElementById('myModal');
 
 
-			var house1 = document.getElementById("HouseName");
+				var house1 = document.getElementById("HouseName");
 
-			var span = document.getElementsByClassName("close")[0];
+				var span = document.getElementsByClassName("close")[0];
 
-			
-			var elements = document.getElementsByTagName("Button"); 
-			//for(var i=0; i<elements.length; i++){
-			//if (elements[i].className == 'house2') { 
+
+				var elements = document.getElementsByTagName("Button");
+				//for(var i=0; i<elements.length; i++){
+				//if (elements[i].className == 'house2') { 
 				// elements[i].onclick = function(){ 
-				
-				 house1.onclick = function() {
-				 modal.style.display = "block";
-				 }
 
-		
-			span.onclick = function() {
-			  modal.style.display = "none";
-			}
+				house1.onclick = function () {
+					modal.style.display = "block";
+				}
 
-			
-			window.onclick = function(event) {
-			  if (event.target == modal) {
-				modal.style.display = "none";
-			  }
-			}
-		</script>
-		<script>
 
-		// make auth and firestore references
-		const db = firebase.firestore();
-		const auth = firebase.auth();
+				span.onclick = function () {
+					modal.style.display = "none";
+				}
 
-		</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		<script src="scripts/auth.js"></script>
-		<script src="scripts/customers.js"></script>
-	</body>
+
+				window.onclick = function (event) {
+					if (event.target == modal) {
+						modal.style.display = "none";
+					}
+				}
+			</script>
+			<script>
+				// make auth and firestore references
+				const db = firebase.firestore();
+				const auth = firebase.auth();
+			</script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+			<script src="scripts/auth.js"></script>
+			<script src="scripts/customers.js"></script>
+</body>
+
 </html>
