@@ -136,3 +136,7 @@ footer.page-footer {
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+#logo{
+  height: 100px;
+}
