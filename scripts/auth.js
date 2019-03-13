@@ -5,9 +5,7 @@ auth.onAuthStateChanged(user => {
     setupUI(user);
     db.collection('Customers').get().then(snapshot => {
       setupCust(snapshot.docs);
-    snapshot.forEach(doc => {
-      custData(doc.data);
-    });
+
       //console.log(firebase.auth().currentUser.displayName);
     });
     db.collection('Properties').get().then(snapshot => {
@@ -17,6 +15,7 @@ auth.onAuthStateChanged(user => {
   } else {
     setupUI();
     setupCust([]);
+    setupProp([]);
   }
 });
 
@@ -48,7 +47,9 @@ createForm.addEventListener('submit', (e) => {
     createForm.reset();
     location.reload();
   })
+  
 });
+
 
 
 
@@ -57,8 +58,8 @@ const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
   auth.signOut().then(() => {
-    console.log("user signed out")
-    //window.location = "index.html";
+    //console.log("user signed out")
+    window.location = "index.html";
 
   });
 });
