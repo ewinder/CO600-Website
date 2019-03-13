@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -65,7 +65,7 @@
     <div class="nav-wrapper">
         <ul id="nav-mobile1" class="left hide-on-med-and-down">
             <li><a href="index.html">Home</a></li>
-            <li><a href="customers.html">Customers </a></li>
+            <li><a href="customers.html">Customers</a></li>
             <li class="active"><a href="properties.html">Properties</a></li>
         </ul>
 
@@ -76,7 +76,6 @@
             <li class="logged-in" style="display: none">
                 <a href="#" class="white-text" id="logout">Logout</a>
             </li>
-
             <li class="logged-out" style="display: none">
                 <a href="#" class="white-text modal-trigger" data-target="modal-login">Login &amp; Sign up</a>
             </li>
@@ -113,10 +112,12 @@
             <div class="modal-content">
                 <h4>Create New Property</h4><br/>
 
-                <form id="create-form">
-                    <div class="input-field">
-                        <input type="text" id="customer" required>
-                        <label for="customer">Customer Name</label>
+                <form id="create-form-prop">
+                    <div class="input-field col s12">
+
+                        <select class="custName" id="custId">
+                        </select>
+                        <label>Select Customer</label>
                     </div>
                     <div class="input-field">
                         <input type="text" id="houseNo" required>
@@ -135,30 +136,37 @@
                         <label for="postCode">Post Code</label>
                     </div>
                     <div class="input-field">
-                        <input type="text" id="bedrooms" required>
-                        <label for="bedrooms">Bedrooms</label>
+                        <input type="text" id="property-type" required>
+                        <label for="property-type">Property Type</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="receptions" required>
+                        <label for="receptions">No of Receptions</label>
                     </div>
                     <div class="input-field">
                         <input type="text" id="bathrooms" required>
-                        <label for="bathrooms">Bathrooms</label>
+                        <label for="bathrooms">No of Bathrooms</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="bedrooms" required>
+                        <label for="bedrooms">No of Bedrooms</label>
                     </div>
                     <label class="switch">
-                        <input type="checkbox"> Parking
+                        <input type="checkbox" id="parking">Parking
                         <span class="slider round"></span>
                     </label>
                     <label class="switch">
-                        <input type="checkbox"> Garden
+                        <input type="checkbox" id="garden">Garden
                         <span class="slider round"></span>
                     </label>
                     <label class="switch">
-                        <input type="checkbox"> Gas Central Heating
+                        <input type="checkbox" id="doubGlaze">Double Glazing
                         <span class="slider round"></span>
                     </label>
                     <label class="switch">
-                        <input type="checkbox"> Double Glazing
+                        <input type="checkbox" id="gas">Gas Central Heating
                         <span class="slider round"></span>
                     </label>
-
                     <button class="btn yellow darken-2 z-depth-0">Create</button>
                 </form>
             </div>
@@ -166,6 +174,12 @@
     </article>
 </section>
 <!-- PROPERTY LIST -->
+
+
+<div class="container" style="margin-top: 40px;">
+
+</div>
+
 <div class="container" style="margin-top: 40px;">
     <ul class="collapsible z-depth-0 properties" style="border: none;">
     </ul>
@@ -179,8 +193,13 @@
 
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="scripts/auth.js"></script>
 <script src="scripts/properties.js"></script>
+<!--<script src="scripts/auth.js"></script>-->
 
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>$(document).ready(function(){
+    $('select').formSelect();
+});</script>
 </body>
 </html>

@@ -1,6 +1,25 @@
+//listen for auth status changes
+auth.onAuthStateChanged(user => {
+    if (user) {
+        //get data
+        setupUI(user);
+        db.collection('Customers').get().then(snapshot => {
+            setupCust(snapshot.docs);
+            snapshot.forEach(doc => {
+                custData(doc.data);
+            });
+            //console.log(firebase.auth().currentUser.displayName);
+        });
+        db.collection('Properties').get().then(snapshot => {
+            setupProp(snapshot.docs);
+        });
+
+    } else {
+        setupUI();
+    }
+});
+
 // DOM elements
-const customerList = document.querySelector('.customers');
-const propertyList = document.querySelector('.properties');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
 
@@ -13,29 +32,18 @@ const setupUI = (user) => {
      // toggle UI elements
     loggedInLinks.forEach(item => item.style.display = 'none');
     loggedOutLinks.forEach(item => item.style.display = 'block');
-  }
-};
+  }};
 
-// setup Customers
-const setupCust  =  (data)  => {
+// logout
+const logout = document.querySelector('#logout');
+logout.addEventListener('click', (e) => {
+    e.preventDefault();
+    auth.signOut().then(() => {
+        console.log("user signed out")
+        //window.location = "index.html";
 
-  if (data.length) {
-    
-  } else {
-    customerList.innerHTML = '<h5 class="center-align">Login to view Service Updates</h5>'
-  }
-};
-
-
-//setup properties
-const setupProp  =  (data)  => {
-
-    if (data.length) {
-
-    } else {
-        propertyList.innerHTML = '<h5 class="center-align">Login to view Service Updates</h5>'
-    }
-};
+    });
+});
 
 // setup materialize components
 document.addEventListener('DOMContentLoaded',  function() {
