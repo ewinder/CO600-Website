@@ -56,7 +56,11 @@ const setupProp = (data) => {
         ${prop.address.street}<br>
         ${prop.address.town}<br>
         ${prop.address.postCode}</div>
-      <div class="collapsible-body grey lighten-4"><form action="advert.html" method="post"><button name="id" value="${prop.propertyId}">View Advert</button></div>
+      <div class="collapsible-body grey lighten-4">
+      <form action="advert.html" target="_blank" >
+        <button class="btn #448aff blue accent-2 waves-effect waves-light" onClick="sessionStorage.setItem('prop', this.value)" value="${prop.propertyId}">View Advert</button>
+      </form>
+      </div>
       </li>
     `;
             html += li;
@@ -73,7 +77,7 @@ const custData = (data) => {
         let html = '';
         data.forEach(doc => {
             const cust = doc.data();
-            console.log(cust);
+            //console.log(cust);
             const select = `
       <select>
         <option value=${cust.customerId}>${cust.name}</option>

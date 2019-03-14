@@ -144,10 +144,16 @@ footer.page-footer {
     height: 100px;
 }
 
+
 #propertiesHead{
     text-align: justify;
 }
 
 #customersHead{
     text-align: justify;
+    color: #4472C4;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: #4472C4; /* no need for !important :) */
 }

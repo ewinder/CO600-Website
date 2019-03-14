@@ -1,8 +1,10 @@
 //listen for auth status changes
 auth.onAuthStateChanged(user => {
     if (user) {
+        var propId = sessionStorage.getItem('prop');
+        console.log("Session " + propId);
         //get data
-        var propId = "8wHeljc273V9LbemDlDW";
+        //var propId = "8wHeljc273V9LbemDlDW";
         const query = db.collection('Properties');//.where(firebase.firestore.FieldPath.documentId(), '==', propId);
         const propDoc = query.doc(propId);
         const docSub = propDoc.collection("Rooms");
@@ -26,7 +28,7 @@ const propDet = (data) => {
         let html = '';
         data.forEach(doc =>{
             const prop = doc.data();
-            console.log(prop);
+            //console.log(prop);
             const li = `
       <li>
       <div id="address">${prop.customer}</div>
@@ -56,7 +58,7 @@ const setupAdvert = (data) => {
         let html = '';
         data.forEach(doc => {
             const adv = doc.data();
-            console.log(adv);
+            //console.log(adv);
             const li = `
       <li>
       <div id="roomName">${adv.roomName}</div>
@@ -71,16 +73,6 @@ const setupAdvert = (data) => {
     }
 };
 
-// // logout
-// const logout = document.querySelector('#logout');
-// logout.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     auth.signOut().then(() => {
-//         //console.log("user signed out")
-//         window.location = "index.html";
-//
-//     });
-// });
 // setup materialize components
 document.addEventListener('DOMContentLoaded', function () {
 
