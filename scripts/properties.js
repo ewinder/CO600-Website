@@ -47,7 +47,7 @@ const setupProp = (data) => {
 
             const li = `
       <li>
-        <div class="collapsible-header grey lighten-4">${prop.address.houseNo}, ${prop.address.street} </div> 
+        <div class="collapsible-header grey lighten-4">${prop.address.houseNo} ${prop.address.street} </div> 
         <div class="collapsible-body"><img alt="house image" onError="this.src='./images/image_placeholder.png';" class="responsive-img" src=${prop.mainPhotoUrl}></div>
         <div class="collapsible-body white">${prop.customer}</div>
         <div class="collapsible-body grey lighten-4">${prop.propertyType}</div>
@@ -56,7 +56,7 @@ const setupProp = (data) => {
         ${prop.address.street}<br>
         ${prop.address.town}<br>
         ${prop.address.postCode}</div>
-      <div class="collapsible-body grey lighten-4"> <a href="advert.html" target="_blank" >View Advert</a></div>
+      <div class="collapsible-body grey lighten-4"><form action="advert.html" method="post"><button name="id" value="${prop.propertyId}">View Advert</button></div>
       </li>
     `;
             html += li;
@@ -73,7 +73,7 @@ const custData = (data) => {
         let html = '';
         data.forEach(doc => {
             const cust = doc.data();
-            //console.log(cust);
+            console.log(cust);
             const select = `
       <select>
         <option value=${cust.customerId}>${cust.name}</option>
