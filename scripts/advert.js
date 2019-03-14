@@ -48,7 +48,7 @@ const propDet = (data) => {
         });
         propData.innerHTML = html;
     } else {
-        propData.innerHTML = '<h5 class="center-align">No Advert</h5>'
+        propData.innerHTML = '<h5 class="center-align">No Adverts</h5>'
     }
 };
 
@@ -61,15 +61,16 @@ const setupAdvert = (data) => {
             //console.log(adv);
             const li = `
       <li>
-      <div id="roomName">${adv.roomName}</div>
-      <div id="roomImage"><img class="materialboxed" width="300" alt="room image" onError="this.src='./images/image_placeholder.png';" class="responsive-img" src=${adv.imageUrl}></div>
+      <div id="roomName">${adv.roomName}
+      <img class="materialboxed" width="300" src=${adv.imageUrl} data-caption="${adv.roomName}" alt="room image" onError="this.src='./images/image_placeholder.png';"><br>
+      </div>
       </li>
     `;
             html += li;
         });
         roomData.innerHTML = html;
     } else {
-        roomData.innerHTML = '<h5 class="center-align">No Advert</h5>'
+        roomData.innerHTML = '<h5 class="center-align">No room details have been created yet</h5>'
     }
 };
 
@@ -82,6 +83,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var items = document.querySelectorAll('.collapsible');
     M.Collapsible.init(items);
 
-    var elems = document.querySelectorAll('.materialboxed');
-    var instances = M.Materialbox.init(elems, "outDuration");
+    $(document).ready(function(){
+        setTimeout(function() {
+            $('.materialboxed').materialbox();
+        }, 1000);
+    });
+
 });
