@@ -114,8 +114,7 @@
         <!-- CREATE PROPERTY MODAL -->
         <li class="logged-in" style="display: none">
             <button href="#" class="btn #448aff blue accent-2 waves-effect waves-light modal-trigger"
-                    data-target="modal-create">Create New Property
-            </button>
+                    data-target="modal-create">Create New Property</button>
         </li>
         <div id="modal-create" class="modal">
             <div class="modal-content">
@@ -123,6 +122,7 @@
 
                 <form id="create-form-prop">
                     <div class="input-field">
+
                         <select class="custName" id="custId">
                         </select>
                         <label>Select Customer</label>
@@ -211,12 +211,9 @@
     const db = firebase.firestore();
     const auth = firebase.auth();
 </script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="scripts/properties.js"></script>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<!--<script>$(document).ready(function(){-->
-<!--$('select').formSelect();-->
-<!--});</script>-->
 </body>
 
 </html>
