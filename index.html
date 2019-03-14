@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- CSS -->
   <!--Import Google Icon Font-->
-  <link rel = "icon" type = "image/png" href = "logo.png" />
+  <link rel = "icon" type = "image/png" href = "logo.png"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <!--Import materialize.css-->
@@ -30,6 +30,7 @@
     };
     firebase.initializeApp(config);
   </script>
+
 
   <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -65,7 +66,10 @@
 <body class="white lighten-3">
 
   <div class="center-align">
-    <img id="logo" src="property_manager_small.png" alt="Property Manager">
+    <a href="index.html">
+      <img id ="logo" src="property_manager_small.png" alt="Logo">
+    </a>
+   <!-- <img id="logo" src="property_manager_small.png" alt="Property Manager" href="index.html"> LOGO WITHOUT LINK -->
   </div>
 
   <!-- NAVBAR -->
@@ -132,8 +136,7 @@
             <h2 class="center blue-text"><i class="material-icons">flash_on</i></h2>
             <h5 class="center">Increase Productivity</h5>
 
-            <p class="light">Use Property Manager to increase your company's productivity, boost profits, and keep your
-              landlords and customers happy. </p>
+            <p class="light">Use Property Manager to save your company  </p>
           </div>
         </div>
 
