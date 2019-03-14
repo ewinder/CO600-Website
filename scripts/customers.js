@@ -47,7 +47,7 @@ const setupCust = (data) => {
 
             const li = `
       <li>
-        <div class="collapsible-header grey lighten-4"> Name - ${cust.name} </div>
+        <div class="collapsible-header grey lighten-4">${cust.name} </div>
         <div class="collapsible-body white"> ${cust.address.houseNo}
         ${cust.address.street}<br>
         ${cust.address.town}<br>
