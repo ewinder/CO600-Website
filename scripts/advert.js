@@ -29,14 +29,14 @@ const propDet = (data) => {
             console.log(prop);
             const li = `
       <li>
-      <div id="address">${prop.customer}</div>
+      <div id="address">${prop.customer}</div> 
       <div id="address">${prop.address.houseNo}</div>
       <div id="address">${prop.address.street}</div>
       <div id="address">${prop.address.town}</div>
       <div id="address">${prop.address.postCode}</div>
       <div id="address">${prop.price}</div>
       <div id="address">${prop.propertyType}</div>
-      <div id="address"><img alt="house image" onError="this.src='./images/image_placeholder.png';" class="responsive-img" src=${prop.mainPhotoUrl}></div>
+      <div class="right-align" id="image"><img class="materialboxed display:inline right-align" width="500" alt="house image" onError="this.src='./images/image_placeholder.png';" class="responsive-img" src=${prop.mainPhotoUrl}></div>
       <div id="address">No of Bedrooms - ${prop.bedrooms}</div>
       <div id="address">No of Receptions - ${prop.receptions}</div>
       <div id="address">No of Bathrooms - ${prop.bathrooms}</div>
