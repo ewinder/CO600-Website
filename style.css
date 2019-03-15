@@ -146,7 +146,6 @@ footer.page-footer {
 
 #customersHead{
     text-align: justify;
-    color: #4472C4;
 }
 
 ul.dropdown-content.select-dropdown li span {
@@ -171,7 +170,6 @@ input:not([type]):focus:not([readonly])+label,.form-wrap input[type=text]:not(.b
 .input-field input:focus + label {
     color: #4472C4 !important;
 }
-
 
 .materialboxed {
     display: inline;
