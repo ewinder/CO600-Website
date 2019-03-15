@@ -52,7 +52,7 @@ const setupCust = (data) => {
         ${cust.address.street}<br>
         ${cust.address.town}<br>
         ${cust.address.postCode}</div>
-        <div class="collapsible-body white"> ${cust.email} </div>
+        <div class="collapsible-body grey lighten-4" black-text> <a href="mailto:${cust.email}?subject=Property Manager">${cust.email}</a></div>
         <div class="collapsible-body white"> ${cust.phoneNo} </div>
       </li>
     `;

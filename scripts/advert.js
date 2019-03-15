@@ -77,7 +77,7 @@ const setupRooms = (data) => {
             //console.log(adv);
             const li = `
       <div class="col l3 center-align">
-      <div class="center-align" id="room"><div class="" id="roomName"><h4>${adv.roomName}</h4></div><img class="materialboxed position: absolute" width="300" src=${adv.imageUrl} data-caption="${adv.roomName}" alt="room image" onError="this.src='./images/image_placeholder.png';"><div>${adv.roomDesc}</div></div>
+      <div class="center-align" id="room"><div class="" id="roomName"><h4>${adv.roomName}</h4></div><img class="materialboxed position: absolute" width="300" src=${adv.imageUrl} data-caption="${adv.roomName}" alt="room image" onError="this.src='./images/image_placeholder.png';"><div>${adv.length} x ${adv.width}</div><div>${adv.roomDesc}</div></div>
       <br>
       </div>
       </div>
