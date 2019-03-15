@@ -140,7 +140,6 @@ footer.page-footer {
     height: 100px;
 }
 
-
 #propertiesHead{
     text-align: justify;
 }
@@ -153,6 +152,26 @@ footer.page-footer {
 ul.dropdown-content.select-dropdown li span {
     color: #4472C4; /* no need for !important :) */
 }
+
+input:focus {
+     border-bottom: 1px solid #4472C4 !important;
+     box-shadow: 0 1px 0 0 #4472C4 !important;
+ }
+
+input:not([type]):focus:not([readonly])+label,.form-wrap input[type=text]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=password]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=email]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=url]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=time]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=date]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=datetime]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=tel]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=number]:not(.browser-default):focus:not([readonly])+label,.form-wrap input[type=search]:not(.browser-default):focus:not([readonly])+label,.form-wrap textarea.materialize-textarea:focus:not([readonly])+label{
+    color: #4472C4; /* after animation color change css */
+}
+
+.form-wrap input:focus:not([type]):not([readonly]),.form-wrap input[type="text"]:focus:not(.browser-default):not([readonly]),.form-wrap input[type="password"]:focus:not(.browser-default):not([readonly]), input[type="email"]:focus:not(.browser-default):not([readonly]),.form-wrap input[type="url"]:focus:not(.browser-default):not([readonly]), input[type="time"]:focus:not(.browser-default):not([readonly]),.form-wrap input[type="date"]:focus:not(.browser-default):not([readonly]), input[type="datetime"]:focus:not(.browser-default):not([readonly]),.form-wrap input[type="datetime-local"]:focus:not(.browser-default):not([readonly]), input[type="tel"]:focus:not(.browser-default):not([readonly]),.form-wrap input[type="number"]:focus:not(.browser-default):not([readonly]), input[type="search"]:focus:not(.browser-default):not([readonly]),.form-wrap textarea.materialize-textarea:focus:not([readonly]){
+    border-bottom: 1px solid #4472C4;
+    box-shadow: 0 1px 0 0 #4472C4; /* after animation color change css */
+}
+
+/* label focus color */
+.input-field input:focus + label {
+    color: #4472C4 !important;
+}
+
 
 .materialboxed {
     display: inline;

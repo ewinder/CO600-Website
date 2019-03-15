@@ -34,7 +34,7 @@ const propDet = (data) => {
             const li = `
       <div class="center-align">
         <a href="index.html">
-        <img id ="logo" src="property_manager_small.png" alt="Logo">
+        <img id ="logo" src="images/Logo.png" alt="Logo">
         </a>
       </div>
       <nav class="nav extended z-depth-0 #448aff blue accent-2">
