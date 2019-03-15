@@ -1,6 +1,6 @@
 //listen for auth status changes
 auth.onAuthStateChanged(user => {
-    if (user) {
+    if (user || !user) {
         var propId = sessionStorage.getItem('prop');
         console.log("Session " + propId);
         //get data

@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2626fb3b-f2db-4fdc-bd2c-430ee8aaabe3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ad2.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/advert.html" beforeDir="false" afterPath="$PROJECT_DIR$/advert.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/advert.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/advert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/properties.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/properties.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +42,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/style.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="140">
@@ -108,11 +106,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/advert.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="9" column="88" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+                <state relative-caret-position="525">
+                  <caret line="58" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="95" />
                 </state>
               </provider>
             </entry>
@@ -142,8 +140,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scripts/advert.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
-                  <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+                <state relative-caret-position="42">
+                  <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
@@ -198,9 +196,9 @@
         <option value="$PROJECT_DIR$/properties.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/properties.js" />
-        <option value="$PROJECT_DIR$/advert.html" />
-        <option value="$PROJECT_DIR$/scripts/advert.js" />
         <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/scripts/advert.js" />
+        <option value="$PROJECT_DIR$/advert.html" />
       </list>
     </option>
   </component>
@@ -238,7 +236,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552608177120" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552609244392" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -290,7 +288,7 @@
       <workItem from="1552165018801" duration="627000" />
       <workItem from="1552412074175" duration="26867000" />
       <workItem from="1552489583285" duration="36636000" />
-      <workItem from="1552583290597" duration="21574000" />
+      <workItem from="1552583290597" duration="22371000" />
     </task>
     <task id="LOCAL-00001" summary="color changes">
       <created>1551045580930</created>
@@ -376,11 +374,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552598375089</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Property advert generation">
+      <created>1552608487237</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1552608487237</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99912000" />
+    <option name="totallyTimeSpent" value="100709000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -512,7 +517,8 @@
     <MESSAGE value="progress made with the advert page" />
     <MESSAGE value="bugs fixes and seesion storage implementation" />
     <MESSAGE value="image click to zoom implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="image click to zoom implemented" />
+    <MESSAGE value="Added Property advert generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Property advert generation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
@@ -605,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/properties.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="183" column="17" lean-forward="true" selection-start-line="183" selection-start-column="17" selection-end-line="183" selection-end-column="17" />
+        <state relative-caret-position="294">
+          <caret line="50" column="199" selection-start-line="50" selection-start-column="199" selection-end-line="50" selection-end-column="199" />
         </state>
       </provider>
     </entry>
@@ -624,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/advert.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="88" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -640,13 +639,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/advert.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="34" column="32" lean-forward="true" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1512">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/advert.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="58" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="95" />
         </state>
       </provider>
     </entry>
