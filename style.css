@@ -129,10 +129,6 @@ footer.page-footer {
     margin: 0;
 }
 
-.row {
-    text-align: center;
-}
-
 .icon-block {
     padding: 0 15px;
 }
@@ -156,4 +152,8 @@ footer.page-footer {
 
 ul.dropdown-content.select-dropdown li span {
     color: #4472C4; /* no need for !important :) */
+}
+
+.materialboxed {
+    display: inline;
 }

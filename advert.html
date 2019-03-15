@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel = "icon" type = "image/png" href = "logo.png"/>
+    <link rel = "icon" type = "image/png" href = "Logo.png"/>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <title>Properties Manager</title>
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
@@ -54,63 +55,11 @@
     </script>
 </head>
 
-
-<!-- blue bar --->
 <body class="white lighten-3">
-<!-- LOGIN MODAL -->
-<div id="modal-login" class="modal">
-    <div class="modal-content">
-        <h4>Login</h4><br/>
-        <div id="firebaseui-auth-container"></div>
-    </div>
-</div>
 
-<nav class="nav extended z-depth-0 #448aff blue accent-2">
-    <!-- Address --->
-    <div class="nav-wrapper">
-    <!-- price--->
-    <p id="price"></p>
-    </div>
-</nav>
-<!-- PROPERTY DETAILS property -->
-<div class="collapsible z-depth-0" style="margin-top: 40px;">
-    <ul class="collapsible z-depth-0 property" style="border: none;">
-    </ul>
-</div>
+<div class="property"></div>
 
-<div class="mainrow">
-    <div class="descColumn">
-       <ol>
-           <!-- the core items of the property. (amount of bedrooms, parking etc in bullet points --->
-
-       </ol>
-    </div>
-    <!-- ROOM DETAILS advert -->
-    <div class="collapsible z-depth-0" style="margin-top: 40px;">
-        <ul class="collapsible z-depth-0 advert" style="border: none;">
-        </ul>
-    </div>
-    <div class="imageColumn">
-        <!-- main house image --->
-    </div>
-</div>
-
-<div class = "descRow">
-
-    <br><br>
-    <!-- full description --->
-</div>
-
-
-<div class = "imagesRow">
-   <!-- house images --->
-</div>
-
-<!-- blue bar at bottom purely for decoration--->
-    <nav class="nav extended z-depth-0 #448aff blue accent-2">
-        <div class="nav-wrapper"> </div>
-    </nav>
-
+<div class="row rooms"></div>
 <script>
     // make auth and firestore references
     const db = firebase.firestore();

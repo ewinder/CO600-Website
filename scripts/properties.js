@@ -48,7 +48,7 @@ const setupProp = (data) => {
             const li = `
       <li>
         <div class="collapsible-header grey lighten-4">${prop.address.houseNo} ${prop.address.street} </div> 
-        <div class="collapsible-body"><img class="materialboxed" width="400" alt="house image" onError="this.src='./images/image_placeholder.png';"  src=${prop.mainPhotoUrl}></div>
+        <div class="collapsible-body"><img class="materialboxed" width="400" alt="house image" onError="this.src='./images/image_placeholder.png';"  src=${prop.mainPhotoUrl} data-caption="Main Image"></div>
         <div class="collapsible-body white">${prop.customer}</div>
         <div class="collapsible-body grey lighten-4">${prop.propertyType}</div>
         <div class="collapsible-body white"> ${prop.address.houseNo}     

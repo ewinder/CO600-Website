@@ -9,19 +9,21 @@ auth.onAuthStateChanged(user => {
         const propDoc = query.doc(propId);
         const docSub = propDoc.collection("Rooms");
             docSub.get().then((snapshot) => {
-                setupAdvert(snapshot.docs);
+                setupRooms(snapshot.docs);
             });
             db.collection('Properties').where(firebase.firestore.FieldPath.documentId(), '==', propId).get().then((snapshot) => {
             propDet(snapshot.docs);
         });
     } else {
         setupAdvert([]);
+        propDet([]);
     }
 });
 
 // DOM elements
-const roomData = document.querySelector('.advert');
+const roomData = document.querySelector('.rooms');
 const propData = document.querySelector('.property');
+//const imageData = document.querySelector('.images');
 
 const propDet = (data) => {
     if (data.length) {
@@ -30,21 +32,35 @@ const propDet = (data) => {
             const prop = doc.data();
             //console.log(prop);
             const li = `
-      <li>
-      <div id="address">${prop.customer}</div> 
-      <div id="address">${prop.address.houseNo}</div>
-      <div id="address">${prop.address.street}</div>
-      <div id="address">${prop.address.town}</div>
-      <div id="address">${prop.address.postCode}</div>
-      <div id="address">${prop.price}</div>
-      <div id="address">${prop.propertyType}</div>
-      <div class="right-align" id="image"><img class="materialboxed display:inline right-align" width="500" alt="house image" onError="this.src='./images/image_placeholder.png';" class="responsive-img" src=${prop.mainPhotoUrl}></div>
-      <div id="address">No of Bedrooms - ${prop.bedrooms}</div>
-      <div id="address">No of Receptions - ${prop.receptions}</div>
-      <div id="address">No of Bathrooms - ${prop.bathrooms}</div>
-      </li>
+      <div class="center-align">
+        <a href="index.html">
+        <img id ="logo" src="property_manager_small.png" alt="Logo">
+        </a>
+      </div>
+      <nav class="nav extended z-depth-0 #448aff blue accent-2">
+      <div class="row">
+    <!-- Address --->
+    <div class="col l10" id="address" style="font-size:1.8vw">${prop.address.houseNo} ${prop.address.street} ${prop.address.town} ${prop.address.postCode}</div>
+    <!-- price--->
+    <div class="col l2 right-align" id="price" style="font-size:1.5vw">${prop.price}</div>
+    </div>     
+     </nav>
+      <div class="row">
+      <div class="col l6" id="details" style="font-size:1.5vw">
+      <ol>${prop.propertyType}</ol>
+      <ol>${prop.bedrooms} Bedrooms</ol>
+      <ol>${prop.receptions} Receptions</ol>
+      <ol>${prop.bathrooms} Bathrooms</ol>
+      <ol>Garden ${prop.garden}</ol>
+      <ol>Parking ${prop.parking}</ol>
+      <ol>Gas Central Heating ${prop.gasHeat}</ol>
+      <ol>Double Glazing ${prop.dg}</ol>
+      </div>
+      <div class="col l6 right-align display:inline" id="image"><img class="materialboxed responsive-img" width="800"  alt="house image" onError="this.src='./images/image_placeholder.png';" src=${prop.mainPhotoUrl} data-caption="Main Image"></div>
+      </div>
+           
     `;
-           html += li;
+            html += li;
         });
         propData.innerHTML = html;
     } else {
@@ -53,18 +69,18 @@ const propDet = (data) => {
 };
 
 // setup the Advert
-const setupAdvert = (data) => {
+const setupRooms = (data) => {
     if (data.length) {
         let html = '';
         data.forEach(doc => {
             const adv = doc.data();
             //console.log(adv);
             const li = `
-      <li>
-      <div id="roomName">${adv.roomName}
-      <img class="materialboxed" width="300" src=${adv.imageUrl} data-caption="${adv.roomName}" alt="room image" onError="this.src='./images/image_placeholder.png';"><br>
+      <div class="col l3 center-align">
+      <div class="center-align" id="room"><div class="" id="roomName"><h4>${adv.roomName}</h4></div><img class="materialboxed position: absolute" width="300" src=${adv.imageUrl} data-caption="${adv.roomName}" alt="room image" onError="this.src='./images/image_placeholder.png';"><div>${adv.roomDesc}</div></div>
+      <br>
       </div>
-      </li>
+      </div>
     `;
             html += li;
         });
